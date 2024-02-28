@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pop-up Survey</title>
+  <!-- Add your CSS styles here -->
+  <style>
+    #survey-popup {
+      /*display: none;*/
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
+      opacity: 0; /* Initially set opacity to 0 */
+      transition: opacity 0.5s ease; /* Add transition for opacity */
+    }
+
+    #survey-popup.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+<!-- Add your website content here -->
+
+<!-- Survey pop-up -->
+<div id="survey-popup">
+  <h2>Help Us Improve!</h2>
+  <p>We'd love to hear about your tutoring experiences. Would you mind taking a quick survey?</p>
+  <button onclick="openSurvey()">Take Survey</button>
+  <button onclick="closeSurvey()">No, thanks</button>
+</div>
+
+<!-- JavaScript code -->
+<script>
+ // Function to open survey pop-up
+const openSurvey = () => {
+    // Add your survey URL here
+    window.open('https://s.surveyplanet.com/xb6jofd8', '_blank');
+};
+
+// Function to close survey pop-up
+const closeSurvey = () => {
+    document.getElementById('survey-popup').classList.remove('show');
+};
+
+
+setTimeout(() => {
+    document.getElementById('survey-popup').classList.add('show');
+}, 1000);
+</script>
+</body>
+</html>
